@@ -1,0 +1,71 @@
+{% render 'partials/head.liquid' %}
+
+<header role="banner">
+    {% render 'partials/nav.liquid' %}
+</header>
+ 
+ <div class="stekje-card">
+  {% if stekje %}
+    <h1>{{ stekje.naam }}</h1>
+
+    <div class="stekje-container">
+      <div class="stekje-media">
+        <img
+          src="https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}"
+          width="{{ stekje.foto.width }}"
+          height="{{ stekje.foto.height }}"
+          alt="{{ stekje.naam }}">
+        <div class="stekje-actions">
+
+      <div class="stekje-info">
+        <div class="info-item">
+          <strong>Beschrijving:</strong>
+          <p>{{ stekje.beschrijving }}</p>
+        </div>
+
+        <div class="info-item">
+          <strong>Land van herkomst:</strong>
+          <p>{{ stekje.land_van_herkomst }}</p>
+        </div>
+
+        <div class="info-item">
+          <strong>Onderhoud:</strong>
+          <p>{{ stekje.onderhoud }}</p>
+        </div>
+
+        <div class="info-item">
+          <strong>Zonlicht:</strong>
+          <p>{{ stekje.zonlicht }}</p>
+        </div>
+
+        <div class="info-item">
+          <strong>Watergeven:</strong>
+          <p>{{ stekje.watergeven }}</p>
+        </div>
+
+        <div class="info-item">
+          <strong>Voeding:</strong>
+          <p>{{ stekje.voeding }}</p>
+        </div>
+
+        <div class="info-item">
+          <strong>Verpotten:</strong>
+          <p>{{ stekje.verpotten }}</p>
+        </div>
+
+        <div class="info-item">
+          <strong>Temperatuur:</strong>
+          <p>{{ stekje.temperatuur }}</p>
+        </div>
+
+        <div class="info-item">
+          <strong>Giftig voor huisdieren:</strong>
+          <p>{{ stekje.giftig }}</p>
+        </div>
+      </div>
+
+    </div>
+  {% else %}
+    {% include '../partials/empty-stekje-card.liquid' %}
+  {% endif %}
+</div> 
