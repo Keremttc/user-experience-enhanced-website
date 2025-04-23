@@ -15,13 +15,13 @@
         <div class="stekjes-container">
             {% for stekje in stekjes %}
             <article class="card-stekje">
-                <a href="/stekjes/{{ stekje.id }}">
+                <a href="/stekje/{{ stekje.id }}">
                     <h3>{{ stekje.naam }}</h3>
 
                     <img class="stekjes-img" src="https://fdnd-agency.directus.app/assets/{{ stekje.foto }}" 
                     alt="Afbeelding van stekje {{ stekje.naam }} in een pot" width="290" height="390">
                
-                    <form action="/stekjes/{{ stekje.id }}" method="POST" data-enhanced="form-{{ id }}">
+                    <form action="/stekje/{{ stekje.id }}" method="POST" data-enhanced="form-{{ id }}">
                         <input type="hidden" name="from" value="{{ stekje.id }}">
                         <button class="like-button">
                             <img class="heart" src="/assets/heart.png" alt="Geef dit stekje een Like" width="50" height="50">
