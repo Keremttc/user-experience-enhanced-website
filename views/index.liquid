@@ -1,1 +1,40 @@
-<h2>Index</h2>
+{% render 'partials/head.liquid' %}
+
+<header>
+    {% render 'partials/nav.liquid' %}
+</header>
+
+<main>
+    <header class="page-header">
+        <h1>Stekjes</h1>
+    </header>
+    <section class="stekjes-overview">
+        <h2>Vind jouw favoriet in onze geliefde collectie!</h2>
+
+        {% if stekjes.size > 0 %}
+        <div class="stekjes-container">
+            {% for stekje in stekjes %}
+            <article class="card-stekje">
+                <a href="/stekjes/{{ stekje.id }}">
+                    <h3>{{ stekje.naam }}</h3>
+
+                    <img class="stekjes-img" src="https://fdnd-agency.directus.app/assets/{{ stekje.foto }}" 
+                    alt="Afbeelding van stekje {{ stekje.naam }} in een pot" width="290" height="390">
+               
+                    <form action="/stekjes/{{ stekje.id }}" method="POST" data-enhanced="form-{{ id }}">
+                        <input type="hidden" name="from" value="{{ stekje.id }}">
+                        <button class="like-button">
+                            <img class="heart" src="/assets/heart.png" alt="Geef dit stekje een Like" width="50" height="50">
+                        </button>
+                    </form>
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>Er zijn momenteel geen stekjes beschikbaar.</p>
+        {% endif %}
+    </section>
+    
+</main>
+
