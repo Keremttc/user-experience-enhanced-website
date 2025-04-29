@@ -64,6 +64,7 @@
 header {
     background-color: var(--main-color-green);
     font-weight: var(--font-weight-black);
+    
 
 }
 
@@ -75,6 +76,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     font-weight: var(--font-weight-light);
+    
 
 
     .hamburger {
@@ -83,7 +85,7 @@ nav {
         margin-left: auto;
         display: block;
         font-weight: var(--sub-header-font);
-
+        
         
 
         @media (min-width: 767px) {
@@ -105,6 +107,7 @@ nav {
         width: 100%;
         display: none;
         flex-direction: column;
+    
 
         &.active {
             display: flex;
@@ -223,24 +226,31 @@ img {
     }
 }
 
-
-
 .card-stekje {
     display: flex;
     align-items: center;
     justify-content: center;
-
     min-width: 250px;
     width: 20%;
     flex-grow: 1;
     background-color: var(--main-color-green);
     border-radius: var(--radius);
+    transition: transform 0.3s ease; /* Voeg een vloeiende overgang toe */
+    
     a {
         width: 100%;
         display: flex;
         flex-direction: column;
         text-decoration: none;
     }
+    
+    &:hover {
+        transform: scale(1.05); /* Vergroot de card met 5% */
+        box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1); /* Optioneel: voeg een schaduw toe voor meer diepte */
+    }
+
+
+    
     
     a h3 {
         color: #F9E9C2;
@@ -312,7 +322,61 @@ img {
         to { transform: translate(-50%, -50%) rotate(360deg); }
     }
     
-
-
-
-
+    /* detailpagina  */
+    .stekje-overview {
+        background-color: var(--main-color-beige);
+        padding: var(--section-padding-y) var(--padding);
+        border-radius: var(--radius);
+    }
+    
+    .stekje-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 0;
+    
+        @media (min-width: 768px) {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+        }
+    }
+    
+    .stekje-media picture,
+    .stekje-media img {
+        border-radius: var(--radius);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .stekje-info {
+        background-color: var(--card-color-green);
+        color: var(--text-color-white);
+        padding: 2rem;
+        border-radius: var(--radius);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+    }
+    
+    .stekje-info .info-item {
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+    
+    .stekje-info .info-item strong {
+        display: block;
+        font-size: 1.1rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--main-color-orange);
+        margin-bottom: 0.5rem;
+    }
+    
+    .stekje-info .info-item p {
+        margin: 0;
+        line-height: var(--line-height-paragraph);
+        font-size: 1rem;
+    }
+    

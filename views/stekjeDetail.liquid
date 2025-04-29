@@ -1,71 +1,83 @@
 {% render 'partials/head.liquid' %}
 
-<header role="banner">
+<header>
     {% render 'partials/nav.liquid' %}
 </header>
- 
- <div class="stekje-card">
-  {% if stekje %}
-    <h1>{{ stekje.naam }}</h1>
 
-    <div class="stekje-container">
-      <div class="stekje-media">
-        <img
-          src="https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}"
-          width="{{ stekje.foto.width }}"
-          height="{{ stekje.foto.height }}"
-          alt="{{ stekje.naam }}">
-        <div class="stekje-actions">
+<main>
+    <header class="page-header">
+        <h1>{{ stekje.naam }}</h1>
+    </header>
+    <section class="stekje-overview">
+        <h2>{{ stekje.naam }}</h2>
 
-      <div class="stekje-info">
-        <div class="info-item">
-          <strong>Beschrijving:</strong>
-          <p>{{ stekje.beschrijving }}</p>
+        {% if stekje %}
+        <div class="stekje-container">
+            <div class="stekje-media">
+                <picture>
+                    <!-- Format voor betere compressie -->
+                    <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}?format=avif">
+                    <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}?format=webp">
+                    <!-- Fallback voor browsers die niet ondersteunen -->
+                    <img
+                        src="https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}"
+                        width="290"
+                        height="390"
+                        alt="{{ stekje.naam }}"
+                        loading="lazy"
+                        style="background: #969494;">
+                </picture>
+            </div>
+
+            <div class="stekje-info">
+                <div class="info-item">
+                    <strong>Beschrijving:</strong>
+                    <p>{{ stekje.beschrijving }}</p>
+                </div>
+
+                <div class="info-item">
+                    <strong>Land van herkomst:</strong>
+                    <p>{{ stekje.land_van_herkomst }}</p>
+                </div>
+
+                <div class="info-item">
+                    <strong>Onderhoud:</strong>
+                    <p>{{ stekje.onderhoud }}</p>
+                </div>
+
+                <div class="info-item">
+                    <strong>Zonlicht:</strong>
+                    <p>{{ stekje.zonlicht }}</p>
+                </div>
+
+                <div class="info-item">
+                    <strong>Watergeven:</strong>
+                    <p>{{ stekje.watergeven }}</p>
+                </div>
+
+                <div class="info-item">
+                    <strong>Voeding:</strong>
+                    <p>{{ stekje.voeding }}</p>
+                </div>
+
+                <div class="info-item">
+                    <strong>Verpotten:</strong>
+                    <p>{{ stekje.verpotten }}</p>
+                </div>
+
+                <div class="info-item">
+                    <strong>Temperatuur:</strong>
+                    <p>{{ stekje.temperatuur }}</p>
+                </div>
+
+                <div class="info-item">
+                    <strong>Giftig voor huisdieren:</strong>
+                    <p>{{ stekje.giftig }}</p>
+                </div>
+            </div>
         </div>
-
-        <div class="info-item">
-          <strong>Land van herkomst:</strong>
-          <p>{{ stekje.land_van_herkomst }}</p>
-        </div>
-
-        <div class="info-item">
-          <strong>Onderhoud:</strong>
-          <p>{{ stekje.onderhoud }}</p>
-        </div>
-
-        <div class="info-item">
-          <strong>Zonlicht:</strong>
-          <p>{{ stekje.zonlicht }}</p>
-        </div>
-
-        <div class="info-item">
-          <strong>Watergeven:</strong>
-          <p>{{ stekje.watergeven }}</p>
-        </div>
-
-        <div class="info-item">
-          <strong>Voeding:</strong>
-          <p>{{ stekje.voeding }}</p>
-        </div>
-
-        <div class="info-item">
-          <strong>Verpotten:</strong>
-          <p>{{ stekje.verpotten }}</p>
-        </div>
-
-        <div class="info-item">
-          <strong>Temperatuur:</strong>
-          <p>{{ stekje.temperatuur }}</p>
-        </div>
-
-        <div class="info-item">
-          <strong>Giftig voor huisdieren:</strong>
-          <p>{{ stekje.giftig }}</p>
-        </div>
-      </div>
-
-    </div>
-  {% else %}
-    {% include '../partials/empty-stekje-card.liquid' %}
-  {% endif %}
-</div> 
+        {% else %}
+        <p>Er zijn momenteel geen stekjes beschikbaar.</p>
+        {% endif %}
+    </section>
+</main>
