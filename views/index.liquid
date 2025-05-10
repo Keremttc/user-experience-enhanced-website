@@ -18,10 +18,42 @@
                 <a href="/stekje/{{ stekje.id }}">
                     <h3>{{ stekje.naam }}</h3>
 
-                    <img class="stekjes-img" src="https://fdnd-agency.directus.app/assets/{{ stekje.foto }}" 
-                    alt="Afbeelding van stekje {{ stekje.naam }} in een pot" width="290" height="390">
-               
-                    <form action="/stekje/{{ stekje.id }}" method="POST" data-enhanced="form-{{ id }}">
+                    <picture>
+                        <!-- AVIF -->
+                        <source
+                            type="image/avif"
+                            srcset="
+                                https://fdnd-agency.directus.app/assets/{{ stekje.foto }}?format=avif&width=400 400w,
+                                https://fdnd-agency.directus.app/assets/{{ stekje.foto }}?format=avif&width=800 800w
+                            "
+                            sizes="(max-width: 600px) 100vw, 50vw"
+                        >
+                        <!-- WebP -->
+                        <source
+                            type="image/webp"
+                            srcset="
+                                https://fdnd-agency.directus.app/assets/{{ stekje.foto }}?format=webp&width=400 400w,
+                                https://fdnd-agency.directus.app/assets/{{ stekje.foto }}?format=webp&width=800 800w
+                            "
+                            sizes="(max-width: 600px) 100vw, 50vw"
+                        >
+                        <!-- Fallback -->
+                        <img
+                            class="stekjes-img"
+                            src="https://fdnd-agency.directus.app/assets/{{ stekje.foto }}?width=400"
+                            srcset="
+                                https://fdnd-agency.directus.app/assets/{{ stekje.foto }}?width=400 400w,
+                                https://fdnd-agency.directus.app/assets/{{ stekje.foto }}?width=800 800w
+                            "
+                            sizes="(max-width: 600px) 100vw, 50vw"
+                            width="290"
+                            height="390"
+                            alt="Afbeelding van stekje {{ stekje.naam }} in een pot"
+                            loading="lazy"
+                        >
+                    </picture>
+
+                    <form action="/stekjes/{{ stekje.id }}" method="POST" data-enhanced="form-{{ id }}">
                         <input type="hidden" name="from" value="{{ stekje.id }}">
                         <button class="like-button">
                             <img class="heart" src="/assets/heart.png" alt="Geef dit stekje een Like" width="50" height="50">
@@ -35,6 +67,4 @@
         <p>Er zijn momenteel geen stekjes beschikbaar.</p>
         {% endif %}
     </section>
-    
 </main>
-
