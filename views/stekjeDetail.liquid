@@ -1,8 +1,8 @@
 {% render 'partials/head.liquid' %}
 
-<header>
+
     {% render 'partials/nav.liquid' %}
-</header>
+
 
 <main>
     <header class="page-header">
@@ -15,17 +15,38 @@
         <div class="stekje-container">
             <div class="stekje-media">
                 <picture>
-                    <!-- Format voor betere compressie -->
-                    <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}?format=avif">
-                    <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}?format=webp">
-                    <!-- Fallback voor browsers die niet ondersteunen -->
+                    <!-- AVIF -->
+                    <source
+                        type="image/avif"
+                        srcset="
+                            https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}?format=avif&width=400 400w,
+                            https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}?format=avif&width=800 800w
+                        "
+                        sizes="(max-width: 600px) 100vw, 50vw"
+                    >
+                    <!-- WebP -->
+                    <source
+                        type="image/webp"
+                        srcset="
+                            https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}?format=webp&width=400 400w,
+                            https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}?format=webp&width=800 800w
+                        "
+                        sizes="(max-width: 600px) 100vw, 50vw"
+                    >
+                    <!-- Fallback -->
                     <img
-                        src="https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}"
+                        src="https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}?width=400"
+                        srcset="
+                            https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}?width=400 400w,
+                            https://fdnd-agency.directus.app/assets/{{ stekje.foto.id }}?width=800 800w
+                        "
+                        sizes="(max-width: 600px) 100vw, 50vw"
                         width="290"
                         height="390"
                         alt="{{ stekje.naam }}"
                         loading="lazy"
-                        style="background: #969494;">
+                        style="background: #969494;"
+                    >
                 </picture>
             </div>
 
