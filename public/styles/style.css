@@ -93,8 +93,6 @@ nav {
         }
     }
 
-   
-
     /* Navigatie menu */
     .nav {
         list-style: none;
@@ -192,10 +190,9 @@ h2 {
     font-size: 2rem;
     font-weight: 900;
 }
-
 h1 {
     color: white;
-    font-size: 70px;
+    font-size: clamp(2rem, 4vw, 4.5rem); /* Voorbeeldwaarden; pas aan naar behoefte */
 }
 
 h2 {
@@ -226,6 +223,19 @@ img {
     }
 }
 
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .card-stekje {
+    flex: 1 1 calc(25% - 1rem); /* 4 per rij */
+    display: flex;
+    flex-direction: column;
+  }
+
+
 .card-stekje {
     display: flex;
     align-items: center;
@@ -235,7 +245,8 @@ img {
     flex-grow: 1;
     background-color: var(--main-color-green);
     border-radius: var(--radius);
-    transition: transform 0.3s ease; /* Voeg een vloeiende overgang toe */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Voeg box-shadow overgang toe */
+    box-shadow: 0 6px 12px rgba(0, 128, 0, 0.6); /* Duidelijkere groene schaduw */
     
     a {
         width: 100%;
@@ -246,12 +257,9 @@ img {
     
     &:hover {
         transform: scale(1.05); /* Vergroot de card met 5% */
-        box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1); /* Optioneel: voeg een schaduw toe voor meer diepte */
+        box-shadow: 0 12px 24px rgba(0, 128, 0, 0.8); /* Veel duidelijkere groene schaduw bij hover */
     }
 
-
-    
-    
     a h3 {
         color: #F9E9C2;
         margin: 0;
@@ -276,6 +284,8 @@ img {
         object-fit: cover;
         border-radius: var(--radius);
     }
+
+
     /* Knoppen */
     button {
         all: unset;
@@ -379,4 +389,94 @@ img {
         line-height: var(--line-height-paragraph);
         font-size: 1rem;
     }
+     
+    .melding {
+        position: fixed;
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 1rem 1.5rem;
+        background-color: #d4edda;
+        color: #155724;
+        border-radius: 0.5rem;
+        font-family: Poppins, sans-serif;
+        font-size: 1rem;
+        z-index: 9999;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        animation: fadeInOut 2s ease-in-out;
+      }
+      
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+          transform: translateX(-50%) translateY(10px);
+        }
+        10% {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+        90% {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateX(-50%) translateY(10px);
+        }
+      }
+      
+      .like-button {
+        transition: transform 0.2s ease;
+      }
+      
+      .like-button.liked {
+        animation: popHeart 0.6s ease-in-out;
+      }
+      
+      @keyframes popHeart {
+        0% {
+          transform: scale(1);
+        }
+        30% {
+          transform: scale(1.4);
+        }
+        60% {
+          transform: scale(0.95);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      
+
+    
+      .melding {
+        position: fixed;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+        color: white;
+        font-weight: bold;
+        z-index: 1000;
+        animation: fade-in-out 2s ease-in-out;
+      }
+      
+      .succes-melding {
+        background-color: #28a745; /* Groen */
+      }
+      
+      .fout-melding {
+        background-color: #dc3545; /* Rood */
+      }
+      
+      @keyframes fade-in-out {
+        0% { opacity: 0; transform: translateY(20px) translateX(-50%); }
+        10%, 90% { opacity: 1; transform: translateY(0) translateX(-50%); }
+        100% { opacity: 0; transform: translateY(20px) translateX(-50%); }
+      }
+      
+ 
+
     
