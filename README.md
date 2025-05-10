@@ -1,11 +1,13 @@
 # Bieb in bloei - Enhanced website  💯
 ## Ontwerp en maak een interactieve website die snel laadt en prettig te gebruiken is.
-<img width="350" alt="Image" src="https://github.com/user-attachments/assets/9babe06a-267d-47b8-934e-a50e98a797cd"/>
+<img width="350" alt="Image" src="https://github.com/user-attachments/assets/d8136d7a-62cf-4a3a-b6e1-e317ce8aee74"/>
 
-<img width="350" alt="Image" src="https://github.com/user-attachments/assets/7f1453f8-263f-4ae4-ae24-5f3321769a0c"/>
+
+<img width="350" alt="Image" src="https://github.com/user-attachments/assets/d49503e4-16b9-4dd1-a557-774838deab0e"/> 
+
 
 ## Projectdoel 🚀 
-In dit project heb ik een interactieve like-button toegevoegd, waarmee gebruikers stekjes kunnen liken. Daarnaast heb ik een POST-functie geïmplementeerd, waarmee gebruikers stekjes kunnen liken.
+
 
 ## Inleiding 🪴
 
@@ -13,38 +15,37 @@ Bieb in bloei is een nieuw initiatief dat bibliotheken en tuinen samenbrengt om 
 
 ## Beschrijving 📚
 
+Op de homepage staan alle stekjescollecties overzichtelijk weergegeven. Hier kun je alle stekjes bekijken en je favoriet kiezen door op de like-knop te klikken.
 
 
 ## HTML Beschrijving 📚
 
 ## Responsive 🎨
 
-. 
+De website is opgebouwd volgens het *mobile-first* principe. De onderstaande afbeelding toont de verschillende layouts voor diverse schermformaten. Op het kleinste formaat heb ik gebruikgemaakt van een one-column layout, waarbij de content overzichtelijk onder elkaar staat. Naarmate de schermbreedte toeneemt, wordt er steeds meer content horizontaal geplaatst en netjes uitgelijnd. Tijdens het bouwen heb ik het oorspronkelijke design op een aantal punten aangepast om de gebruiksvriendelijkheid en visuele balans te verbeteren.
 
-<img width="350" alt="Image" src="https://github.com/user-attachments/assets/01223f5b-1927-4734-a97a-5e5295ddfcbc"/>
+<img width="450" alt="Image" src="https://github.com/user-attachments/assets/29826cfd-9bd0-4ce8-bc32-8bc504879299"/>
 
 ## Ontwerpkeuzes ✏️
 
+Deze sprint heb ik me gericht op het herontwerpen van de stekjespagina, met speciale aandacht voor de accentkleuren van de huidige website. Het was belangrijk om de kleuren van "Bieb in Bloei" op een consistente en herkenbare manier door te voeren. Hiervoor heb ik inspiratie gehaald uit de bestaande pagina’s van Bieb in Bloei, zodat het ontwerp goed aansluit bij de bestaande huisstijl. In de onderstaande vergelijking is het bovenste ontwerp de vernieuwde versie en het onderste het oude ontwerp. Persoonlijk vind ik het nieuwe ontwerp netter en visueel sterker.
 
 
-<img width="350" alt="Image" src="https://github.com/user-attachments/assets/17cdae11-260b-4e58-8f14-ddede91a07d5"/>
+<img width="550" alt="Image" src="https://github.com/user-attachments/assets/d68b103c-f5a6-4474-a194-839b9c31c03f"/>
 
 ## Color contrast analyser 🎨
 
-
+Voor dit herontwerp was het belangrijk om het kleurcontrast te testen met het oog op toegankelijkheid. Op basis van de testresultaten heb ik enkele tekstkleuren aangepast om te voldoen aan de toegankelijkheidsrichtlijnen. Zo wordt de leesbaarheid en gebruiksvriendelijkheid voor alle gebruikers gewaarborgd.
 
 <img width="350" alt="Image" src="https://github.com/user-attachments/assets/84864fc2-e7a5-4e02-af8f-74af24465045"/>
 
 <img width="350" alt="Image" src="https://github.com/user-attachments/assets/69aa2a0c-9f7d-46d9-951f-65b46208e9d3"/>
 
-## UI states
+## Responsive images
 
 
+## Succesion state
 
-
-<img width="350" alt="Image" src="https://github.com/user-attachments/assets/96983e91-a52e-40ee-bbaf-056e41b11a4a"/>
-
-<img width="350" alt="Image" src="https://github.com/user-attachments/assets/00c1a63d-5bb0-4592-9f43-81dfd5351135"/>
 
 ## featers
 
