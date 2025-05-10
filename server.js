@@ -1,3 +1,4 @@
+
 // Importeer Express, een framework voor het bouwen van webservers
 import express from 'express'
 
@@ -144,5 +145,3 @@ app.set('port', process.env.PORT || 8006)
 app.listen(app.get('port'), function () {
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
-
-
