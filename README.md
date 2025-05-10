@@ -26,7 +26,7 @@ De website is opgebouwd volgens het *mobile-first* principe. De onderstaande afb
 
 <img width="450" alt="Image" src="https://github.com/user-attachments/assets/29826cfd-9bd0-4ce8-bc32-8bc504879299"/>
 
-## Ontwerpkeuzes ✏️
+## Ontwerpkeuzes/Responsive images ✏️
 
 Deze sprint heb ik me gericht op het herontwerpen van de stekjespagina, met speciale aandacht voor de accentkleuren van de huidige website. Het was belangrijk om de kleuren van "Bieb in Bloei" op een consistente en herkenbare manier door te voeren. Hiervoor heb ik inspiratie gehaald uit de bestaande pagina’s van Bieb in Bloei, zodat het ontwerp goed aansluit bij de bestaande huisstijl. In de onderstaande vergelijking is het bovenste ontwerp de vernieuwde versie en het onderste het oude ontwerp. Persoonlijk vind ik het nieuwe ontwerp netter en visueel sterker.
 
@@ -41,10 +41,14 @@ Voor dit herontwerp was het belangrijk om het kleurcontrast te testen met het oo
 
 <img width="350" alt="Image" src="https://github.com/user-attachments/assets/69aa2a0c-9f7d-46d9-951f-65b46208e9d3"/>
 
-## Responsive images
+
 
 
 ## Succesion state
+
+
+https://github.com/user-attachments/assets/a040c892-5c20-47a6-9402-38f886900458
+
 
 
 ## featers
